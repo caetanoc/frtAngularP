@@ -1,0 +1,47 @@
+<h1 class="my-3 text-primary">
+  Listar Clientes
+  <button type="button" routerLink="/clientes/cadastrar"
+  class="btn btn-success mt-2 float-right"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+</h1>
+
+<div class="card shadow">
+  <table class="table table-responsive table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Cadastro</th>
+        <th>CPF</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cli of listaClientes">
+        <td> {{ cli.id }} </td>
+        <td> {{ cli.nome }} </td>
+        <td> {{ cli.cadastro | date: "shortDate" }} </td>
+        <td> {{ cli.cpf }} </td>
+        <td>
+          <button
+             class="btn btn-warning"
+             routerLink="/clientes/atualizar/{{cli.id}}">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger ml-2" [swal]="{
+            title: 'Atenção!',
+            text: 'Deseja realmente excluir o cliente: ' + cli.nome + '?',
+            showDenyButton: true,
+            denyButtonText: 'Não',
+            confirmButtonText: 'Ok',
+            icon: 'warning'
+          }" (confirm)="deletar(cli)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+

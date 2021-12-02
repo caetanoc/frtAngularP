@@ -1,0 +1,46 @@
+<h1 class="my-3 text-primary">
+  Listar Produtos
+  <button type="button" routerLink="/produtos/cadastrar"
+  class="btn btn-success mt-2 float-right"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+</h1>
+
+<div class="card shadow">
+  <table class="table table-responsive table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Validade</th>
+        <th>Valor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of listaProdutos">
+        <td> {{ prod.id }} </td>
+        <td> {{ prod.nome}} </td>
+        <td> {{ prod.validade | date: "shortDate" }} </td>
+        <td> {{ prod.preco | currency: "BRL"}} </td>
+        <td>
+          <button
+             class="btn btn-warning"
+             routerLink="/produtos/atualizar/{{prod.id}}">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger ml-2" [swal]="{
+            title: 'Atenção!',
+            text: 'Deseja realmente excluir o produto: ' + prod.nome + '?',
+            showDenyButton: true,
+            denyButtonText: 'Não',
+            confirmButtonText: 'Ok',
+            icon: 'warning'
+          }" (confirm)="deletar(prod)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

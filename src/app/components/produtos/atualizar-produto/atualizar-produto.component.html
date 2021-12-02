@@ -1,0 +1,47 @@
+<h1 class="my-3 text-primary">Atualizar Produto</h1>
+
+<div class="card shadow">
+  <form class="m-3" action="#">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="nome"> Nome do Produto</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o nome do Produto"
+            name="nomeProduto" [(ngModel)]="produto.nome"
+            id=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="validade"> Validade do Produto</label>
+          <input type="date" class="form-control" name="validade" [(ngModel)]="produto.validade" id="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="preco"> Preço do Produto</label>
+          <input type="number" class="form-control" name="preco" [(ngModel)]="produto.preco" id=""
+          placeholder="0,00"/>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" routerLink="/produtos">Voltar</button>
+
+        <button class="btn btn-warning float-right" (click)="salvarProduto()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

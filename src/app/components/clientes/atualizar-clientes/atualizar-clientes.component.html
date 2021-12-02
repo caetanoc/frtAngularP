@@ -1,0 +1,48 @@
+<h1 class="my-3 text-primary">Atualizar Cliente</h1>
+
+<div class="card shadow">
+  <form class="m-3" action="#">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="nome"> Nome do Cliente</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o nome do Cliente"
+            name="nomeCliente" [(ngModel)]="cliente.nome"
+            id=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="validade"> Data de Cadastro</label>
+          <input type="date" class="form-control" name="cadastro" [(ngModel)]="cliente.cadastro" id="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="preco"> CPF do Cliente</label>
+          <input type="number" class="form-control" name="cpf" [(ngModel)]="cliente.cpf" id=""
+          placeholder="informe CPF"/>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" routerLink="/clientes">Voltar</button>
+
+        <button class="btn btn-success float-right" (click)="salvarCliente()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

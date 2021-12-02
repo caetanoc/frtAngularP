@@ -1,0 +1,30 @@
+<h1>Cursos para todo mundo!</h1>
+
+<h4 class="text-danger">{{ anuncio }}</h4>
+
+<div class="row">
+  <div class="col">
+
+    <app-card-produto
+      [foto]="foto"
+      [nomeProduto]="nomeProduto"
+      [promocao]="promocao"
+      [idProduto]="idProduto"
+      [dataValidade]="dataValidade"
+      [precoProduto]="precoProduto"
+    ></app-card-produto>
+
+  </div>
+  <div class="col">
+
+    <app-card-produto
+      foto="https://fotografiamais.com.br/wp-content/uploads/2018/08/foto-panoramica-grande-angular.jpg"
+      nomeProduto="Viagem a Europa"
+      promocao="false"
+      idProduto="15"
+      dataValidade="2021-08-31"
+      precoProduto="2500.00"
+    ></app-card-produto>
+
+  </div>
+</div>
