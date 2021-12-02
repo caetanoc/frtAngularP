@@ -1,0 +1,2 @@
+# frtAngularP
+Angular frontend
